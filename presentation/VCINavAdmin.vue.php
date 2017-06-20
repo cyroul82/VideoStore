@@ -11,9 +11,15 @@ function afficheNavAdmin(){
            <span class="icon-bar"></span>
            <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand" href="#"><?php afficheDate(); ?></a>
+         <a class="navbar-brand" href="index.php"><?php afficheDate(); ?></a>
        </div>
        <div id="myNav" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav">
+           <li><a href="./VCIResaDefault.php">Réserver un film</a></li>
+           <li><a href="./404.php">Les Boutiques VC</a></li>
+           <li><a href="./404.php">Actualités</a></li>
+        </ul>
+
          <form id="signin" class="navbar-form navbar-right" role="form" action="VCILogAdmin.php" method="post">
            <div class="input-group">
                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>

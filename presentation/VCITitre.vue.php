@@ -12,7 +12,7 @@ function afficheTitre(){
         </div>
         <div class="row">
           <div class="lead">
-            ... et si on se faisait une toile, à la maison ?
+            ... et si on change de style et implémente Bootstrap ?
           </div>
         </div>
       </div>

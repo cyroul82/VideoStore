@@ -76,6 +76,42 @@ private static function emailExists($email)
     unset($mysqlPDO);
   }
 
+  public static function RetourneTypeFilm($user, $password, $typeVoulu){
+    $mysqlPDO = VideoDAO::ConnectVideo($user,$password);
+
+    $sql = "select CODE_TYPE_FILM, LIB_TYPE_FILM from typefilm where CODE_TYPE_FILM=?";
+
+    $result = $mysqlPDO->prepare($sql);
+    $result->execute(array($typeVoulu));
+    $data=$result->fetch(PDO::FETCH_ASSOC);
+
+    $result->closeCursor();
+    VideoDAO::DisconnectVideo($mysqlPDO);
+
+    return $data;
+  }
+
+
+  public static function ListAllMovies($user, $password){
+    $mysqlPDO = VideoDAO::ConnectVideo($user, $password);
+
+    $sql = 'SELECT ID_FILM, CODE_TYPE_FILM, ID_REALIS, TITRE_FILM, ANNEE_FILM, REF_IMAGE, RESUME, NOM_STAR, PRENOM_STAR FROM film inner join star on  ID_REALIS = ID_STAR group by ID_FILM';
+    $data = array();
+    try {
+      $result = $mysqlPDO->query($sql);
+      $result->execute();
+      $data=$result->fetchAll();
+      $result->closeCursor();
+      VideoDAO::DisconnectVideo($mysqlPDO);
+
+    }
+    catch(Exception $e) {
+      die('<h1>Erreur de lecture en base de données : </h1>' . $e->getMessage());
+    }
+
+    return $data;
+  }
+
   public static function ListeTypesFilms($user, $password){
     $mysqlPDO = VideoDAO::ConnectVideo($user, $password);
 
@@ -97,20 +133,6 @@ private static function emailExists($email)
     return $data;
   }
 
-  public static function RetourneTypeFilm($user, $password, $typeVoulu){
-    $mysqlPDO = VideoDAO::ConnectVideo($user,$password);
-
-    $sql = "select CODE_TYPE_FILM, LIB_TYPE_FILM from typefilm where CODE_TYPE_FILM=?";
-
-    $result = $mysqlPDO->prepare($sql);
-    $result->execute(array($typeVoulu));
-    $data=$result->fetch(PDO::FETCH_ASSOC);
-
-    $result->closeCursor();
-    VideoDAO::DisconnectVideo($mysqlPDO);
-
-    return $data;
-  }
 
   public static function ListeRealisateurs($user, $password){
     $mysqlPDO = VideoDAO::ConnectVideo($user, $password);

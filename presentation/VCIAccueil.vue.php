@@ -2,7 +2,6 @@
 require('VCIEntete.vue.php');
 require('VCINavAdmin.vue.php');
 require('VCITitre.vue.php');
-require('VCIMenu.vue.php');
 
 function AfficheEcranAccueil($erreur){
 ?>
@@ -20,12 +19,7 @@ function AfficheEcranAccueil($erreur){
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
-        <nav>
-          <?php afficheMenu(); ?>
-        </nav>
-      </div>
-      <div class="col-md-9 text-center">
+      <div class="col-xs-12 text-center">
         <h1>Bienvenue !</h1>
         <?php if(!empty($erreur)){ ?>
           <div class="alert alert-danger" role="alert">

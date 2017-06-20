@@ -1,6 +1,5 @@
 <?php
 require ("./presentation/Admin/VCIEnteteAdmin.vue.php");
-require ("./presentation/Admin/VCIMenuAdmin.vue.php");
 require ("./presentation/Admin/VCITitreAdmin.vue.php");
 require ("./presentation/Admin/VCINavLogout.vue.php");
 
@@ -19,12 +18,7 @@ function afficheNewFilm($typesFilms, $realisateursFilm){ ?>
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
-          <nav>
-            <?php afficheMenuAdmin(); ?>
-          </nav>
-        </div>
-        <div class="col-md-9 text-center">
+        <div class="col-xs-12 text-center">
           <h1 >Saisie d'un nouveau film</h1>
 
           <form class="form-horizontal" name="frmNewFilm" action="VCINewFilm2.php" method="post">

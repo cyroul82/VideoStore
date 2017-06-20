@@ -2,7 +2,6 @@
 require('VCIEntete.vue.php');
 require('VCINavAdmin.vue.php');
 require('VCITitre.vue.php');
-require('VCIMenu.vue.php');
 
 function AfficheDebutPage($dataResa, $erreur){
 
@@ -16,10 +15,8 @@ function AfficheDebutPage($dataResa, $erreur){
    <?php afficheNavAdmin(); ?>
    <div class="container">
      <div class="row">
-       <div class="col-md-3">
-           <?php afficheMenu(); ?>
-       </div>
-       <div class="col-md-9">
+
+       <div class="col-xs-9">
          <h1>Réservation de film</h1>
          <?php if($erreur ==1){ ?>
 
