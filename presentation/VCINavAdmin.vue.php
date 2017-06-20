@@ -16,8 +16,7 @@ function afficheNavAdmin(){
        <div id="myNav" class="collapse navbar-collapse">
          <ul class="nav navbar-nav">
            <li><a href="./VCIResaDefault.php">Réserver un film</a></li>
-           <li><a href="./404.php">Les Boutiques VC</a></li>
-           <li><a href="./404.php">Actualités</a></li>
+           <li><a href="./MovieDBController.php">The MovieDB</a></li>
         </ul>
 
          <form id="signin" class="navbar-form navbar-right" role="form" action="VCILogAdmin.php" method="post">
