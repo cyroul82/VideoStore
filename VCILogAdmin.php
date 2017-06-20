@@ -16,6 +16,6 @@ require ("./DAO/VideoDAO.php");
     }
   }
   else {
-     header("location: index.php");
+     header("location: index.php?erreur=Fill up the form in order to connect !?");
   }
 ?>

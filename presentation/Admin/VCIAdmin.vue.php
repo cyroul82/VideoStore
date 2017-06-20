@@ -1,6 +1,5 @@
 <?php
 require ("./presentation/Admin/VCIEnteteAdmin.vue.php");
-require ("./presentation/Admin/VCIMenuAdmin.vue.php");
 require ("./presentation/Admin/VCITitreAdmin.vue.php");
 require ("./presentation/Admin/VCINavLogout.vue.php");
 
@@ -19,12 +18,8 @@ function afficheAdmin($success, $erreur){ ?>
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
-          <nav>
-            <?php afficheMenuAdmin(); ?>
-          </nav>
-        </div>
-        <div class="col-md-9 text-center">
+
+        <div class="col--12 text-center">
           <h1>Salut Admin</h1>
           <?php if(isset($erreur) && !empty($erreur)){ ?>
             <div class="alert alert-danger" role="alert">

@@ -2,7 +2,6 @@
 require('VCIEntete.vue.php');
 require('VCINavAdmin.vue.php');
 require('VCITitre.vue.php');
-require('VCIMenu.vue.php');
 
 function SelectionTypeFilm($data){
  ?>
@@ -19,18 +18,10 @@ function SelectionTypeFilm($data){
  </head>
  <body>
    <?php afficheNavAdmin(); ?>
-   <div class="container">
-     
 
-   </div>
    <div class="container">
      <div class="row">
-       <div class="col-md-3">
-         <nav>
-           <?php afficheMenu(); ?>
-         </nav>
-       </div>
-       <div class="col-md-9 text-center">
+       <div class="col-xs-12">
          <form  action="VCIResa2.php" id="f_type" method = "get">
      				<select  name="typef" id="typef" onchange="vazy()" >
      				<!-- première option par défaut -->
@@ -47,6 +38,7 @@ function SelectionTypeFilm($data){
          </form>
 
        </div>
+
      </div>
    </div>
 

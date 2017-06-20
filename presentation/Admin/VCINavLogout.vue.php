@@ -14,6 +14,11 @@ function afficheNavAdminLogout(){
          <a class="navbar-brand" href="#"><?php afficheDate(); ?></a>
        </div>
        <div id="myNav" class="collapse navbar-collapse">
+         <ul class="nav navbar-nav">
+           <li><a href="./VCINewFilm.php">Nouveau film</a></li>
+           <li><a href="./404.php">Autre</a></li>
+           <li><a href="./404.php">Autre</a></li>
+         </ul>
          <form id="signout" class="navbar-form navbar-right" role="form" action="VCILogout.php" method="post">
           <button type="submit" class="btn btn-primary">Logout</button>
         </form>
