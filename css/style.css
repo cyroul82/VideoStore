@@ -1,0 +1,7 @@
+body {
+  padding-top: 70px;
+}
+
+[class*="input-group"] {
+  margin-bottom: 15px !important;
+}
