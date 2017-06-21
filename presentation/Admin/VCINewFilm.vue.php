@@ -1,13 +1,13 @@
 <?php
 require ("./presentation/Admin/VCIEnteteAdmin.vue.php");
 require ("./presentation/Admin/VCITitreAdmin.vue.php");
-require ("./presentation/Admin/VCINavLogout.vue.php");
+require ("./presentation/VCINavAdmin.vue.php");
 
 function afficheNewFilm($typesFilms, $realisateursFilm){ ?>
   <?php afficheEnteteAdmin(); ?>
   </head>
   <body>
-    <?php afficheNavAdminLogout(); ?>
+    <?php afficheNavAdmin(); ?>
     <div class="container">
       <div class="jumbotron">
         <header>

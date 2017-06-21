@@ -24,19 +24,31 @@ class VideoDAO{
 
     $req = VideoDAO::adminConnect()->query("select pass from usercontact where email='" . $email . "'");
     $user = $req->fetch();
-
+    $bool=false;
 
     if($password == $user['pass']){
-      return true;
+
+      $bool= true;
     }
     else{
       $error = array('error'=>'Wrong Password');
-      return false;
+      $bool= false;
     }
   }else {
     $error = array('error'=>'email not found in the DB');
-    return false;
+    $bool= false;
   }
+  $req->closeCursor();
+  return $bool;
+
+}
+
+public static function getGroupUser($email){
+  $req = VideoDAO::adminConnect()->query("select USERGROUP from usercontact where email='" . $email . "'");
+  $data = $req->fetch();
+  $group = $data['USERGROUP'];
+  $req->closeCursor();
+  return $group;
 
 }
 
