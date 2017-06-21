@@ -8,7 +8,6 @@ class MovieDBDao {
     $json = file_get_contents($url);
     $obj = json_decode($json, true);
 
-
     return $obj;
   }
 }

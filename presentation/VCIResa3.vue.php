@@ -3,14 +3,17 @@ require('VCIEntete.vue.php');
 require('VCINavAdmin.vue.php');
 require('VCITitre.vue.php');
 
-function AfficheFormSaisieAdherent($dataFilm){
+function AfficheFormSaisieAdherent(){
+  $bool=false;
+  if(isset($_SESSION["email"])){
+    $bool=true;
+  }
  ?>
  <?php afficheEntete(); ?>
  <script language="javascript">
  function vazy()
  {
  	var erreur = false;
- 	// TODO : ajouter un contrôle de saisie du n° adhérent - numérique -  et du nom
  	if (! (erreur))
  		{
  			document.getElementById("coordonnee").submit()
@@ -25,9 +28,7 @@ function AfficheFormSaisieAdherent($dataFilm){
    <div class="container">
      <div class="row">
        <div class="col-xs-12 text-center">
-         <form id="coordonnee" action="VCIResa4.php" method = "get">
-         	<input type = "hidden" name="codfil" value="<?php  echo $_GET['filmchoisi'] ; ?>">
-         	<input type="hidden" name ="libfil" value="<?php  echo $_GET['libfilmchoisi'] ;?>">
+
          	<h1 >Voici le film que vous avez sélectionné</h1>
           <hr>
           <div class="row">
@@ -62,21 +63,12 @@ function AfficheFormSaisieAdherent($dataFilm){
             </div>
           </div>
 
-
+          <?php if($bool){ ?>
          	<h2 >Veuillez saisir vos coordonnées:</h2>
-          <!-- <form>
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" name="nom" value="" class="form-control" >
-            </div>
-            <div class="form-group">
-              <label for="adherent">Numéro Adhérent</label>
-              <input type="text" name="adherent" value="" class="form-control">
-            </div>
-            <input type="button" value=" Réserver " onclick="javascript:vazy();">
-            <input type ="button" value = " Annuler " onclick="javascript:window.location.href = 'vciresa.php';">
 
-          </form> -->
+          <form id="coordonnee" action="VCIResa4.php" method = "get">
+          	<input type = "hidden" name="codfil" value="<?php  echo $_GET['filmchoisi'] ; ?>">
+          	<input type="hidden" name ="libfil" value="<?php  echo $_GET['libfilmchoisi'] ;?>">
          	<table class="recap">
          		<tr>
          			<td><span title="aide : Adh1 ou Adh2">Nom :</span></td>
@@ -93,6 +85,13 @@ function AfficheFormSaisieAdherent($dataFilm){
          	</table>
          	</div>
          </form>
+         <?php } else {?>
+           <h2 >Pour voir ce film, merci de vous connecter</h2>
+           <!-- <form  role="form" action="Login.php" method="post">
+            <input type="hidden" name="page"  value="<?php $_SERVER['argv']; ?>">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form> -->
+           <?php } ?>
        </div>
      </div>
    </div>

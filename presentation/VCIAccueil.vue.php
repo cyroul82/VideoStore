@@ -9,13 +9,13 @@ function AfficheEcranAccueil($erreur){
 </head>
 <body>
   <?php afficheNavAdmin(); ?>
+
   <div class="container">
     <div class="jumbotron">
       <header>
         <?php afficheTitre(); ?>
       </header>
     </div>
-
   </div>
   <div class="container">
     <div class="row">

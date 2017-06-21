@@ -19,7 +19,6 @@ function DisplayPopularMovies($obj){
          <div class="row">
            <div class="page-header">
             <h1>Films Populaires</h1>
-
              <?php
              if (count($dataFilms) == 0){
              ?>
@@ -34,7 +33,7 @@ function DisplayPopularMovies($obj){
               foreach($dataFilms as $rowFilm ){
            ?>
 
-             <div class="col-sm-6 col-md-4">
+             <div/ class="col-sm-6 col-md-4">
              <!--Card-->
              <div class="card">
                 <h4 class="card-title"><?php  echo $rowFilm['title']; ?></h4>
