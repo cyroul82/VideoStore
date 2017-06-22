@@ -1,3 +1,3 @@
 <?php
-echo $POST['email'];
+echo "OK";
  ?>

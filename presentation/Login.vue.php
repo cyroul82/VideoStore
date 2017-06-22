@@ -12,8 +12,6 @@ function DisplayLogin($erreur){
     var xhr = new XMLHttpRequest();
     try {
       xhr = new XMLHttpRequest();
-
-      alert(this.readystate);
     }catch(e){
       xhr=null;
       return;
@@ -21,19 +19,24 @@ function DisplayLogin($erreur){
 
 
 
-    xhr.open("POST", "LoginAjax.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("email=" + document.getElementById('email').value + "&password=" + document.getElementById('password').value);
+    xhr.open("POST", "http://localhost/VideoStore/LoginAjax.php", true);
+    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    // xhr.send("email=" + document.getElementById('email').value + "&password=" + document.getElementById('password').value);
+    var value1 = encodeURIComponent("SALUT");
+    xhr.open('GET', 'LoginAjax.php?param1=' + value1);
+    xhr.send(null);
 
-    xhr.onreadystatechange = function(){
-      alert("salut : " + xhr.readystate);
-      if(xhr.readystate == 4){
-        document.getElementById('test').innerHTML="<h1>SALUT</h1>";
+    xhr.onreadystatechange =  function(){
+      if(xhr.readyState === 4 && xhr.status === 200){
+        alert(xhr.responseText);
+        // if(xhr.responseText !== "OK"){
+          document.getElementById('test').innerHTML=  "salut" + xhr.responseText;
+        // }
       }
       else {
-        document.getElementById('test').innerHTML="<h1>ooooo</h1>";
+        document.getElementById('test').innerHTML="oye";
       }
-    }
+    };
   }
  </script>
  </head>
