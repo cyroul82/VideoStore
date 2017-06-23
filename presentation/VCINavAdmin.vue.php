@@ -29,7 +29,9 @@ function afficheNavAdmin(){
            <li><a href="./MovieDBController.php">The MovieDB</a></li>
            <?php if($group) {?>
            <li><a href="./VCINewFilm.php">Nouveau film</a></li>
+
            <?php } ?>
+           <li><a href="./VCIMapController.php">Contact</a></li>
         </ul>
         <?php if(!$bool){ ?>
          <form id="signin" class="navbar-form navbar-right" role="form" action="Login.php" method="post">

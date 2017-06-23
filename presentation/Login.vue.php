@@ -6,39 +6,7 @@ require('VCITitre.vue.php');
 function DisplayLogin($erreur){
  ?>
  <?php afficheEntete(); ?>
- <script type="text/javascript">
-  function login(){
-
-    var xhr = new XMLHttpRequest();
-    try {
-      xhr = new XMLHttpRequest();
-    }catch(e){
-      xhr=null;
-      return;
-    }
-
-
-
-    xhr.open("POST", "http://localhost/VideoStore/LoginAjax.php", true);
-    // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    // xhr.send("email=" + document.getElementById('email').value + "&password=" + document.getElementById('password').value);
-    var value1 = encodeURIComponent("SALUT");
-    xhr.open('GET', 'LoginAjax.php?param1=' + value1);
-    xhr.send(null);
-
-    xhr.onreadystatechange =  function(){
-      if(xhr.readyState === 4 && xhr.status === 200){
-        alert(xhr.responseText);
-        // if(xhr.responseText !== "OK"){
-          document.getElementById('test').innerHTML=  "salut" + xhr.responseText;
-        // }
-      }
-      else {
-        document.getElementById('test').innerHTML="oye";
-      }
-    };
-  }
- </script>
+ <script src="js/main.js" charset="utf-8"></script>
  </head>
  <body>
    <?php afficheNavAdmin(); ?>
@@ -50,18 +18,19 @@ function DisplayLogin($erreur){
        </div>
 
      <?php } ?>
+     <div id="test"></div>
     <div class="row">
 
       <div class="main">
-        <div id="test">
 
-        </div>
-        <form role="form" action="VCILogAdmin.php" method="post">
+
+
+        <form id="loginForm" role="form" action="" method="post" onsubmit="return login();">
           <div class="form-group">
             <label for="inputUsernameEmail">Email</label>
             <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address">
+                <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email Address" required>
            </div>
           </div>
           <div class="form-group">
@@ -69,7 +38,7 @@ function DisplayLogin($erreur){
             <label for="inputPassword">Password</label>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-              <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password">
+              <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password" required>
             </div>
           </div>
           <div class="checkbox pull-right">
@@ -77,9 +46,7 @@ function DisplayLogin($erreur){
               <input type="checkbox" name="remember">
               Remember me </label>
           </div>
-          <button type="button" class="btn btn btn-primary" onclick="login()">
-            Log In
-          </button>
+          <button type="sumbit" class="btn btn btn-primary">Log In</button>
         </form>
 
       </div>

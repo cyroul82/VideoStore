@@ -80,7 +80,7 @@ function AfficheFormSaisieAdherent(){
          		</tr>
          		<tr>
          			<td ></td>
-         			<td ><input type="button" value=" Réserver " onclick="javascript:vazy();"> <input type ="button" value = " Annuler " onclick="javascript:window.location.href = 'vciresa.php';"></td>
+         			<td ><input type="button" value="Réserver" onclick="javascript:vazy();"> <input type ="button" value = " Annuler " onclick="javascript:window.location.href = 'vciresa.php';"></td>
          		</tr>
          	</table>
          	</div>

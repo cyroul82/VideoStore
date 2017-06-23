@@ -20,17 +20,17 @@ require ("./DAO/VideoDAO.php");
         exit();
       }
       else{
-        if(isset($_SESSION["page"])){
-
-          $url = urlencode($_SESSION["page"]);
-
-          header("Location:$url");
-          exit();
-        }
-        else {
+        // if(isset($_SESSION["page"])){
+        //
+        //   $url = urlencode($_SESSION["page"]);
+        //
+        //   header("Location:$url");
+        //   exit();
+        // }
+        // else {
           header("location: index.php");
           exit();
-        }
+        // }
       }
 
 
