@@ -1,4 +1,4 @@
-# ${1:Video Store}
+# Video Store
 Simple site pour mettre en oeuvre différents outils.
 Mise en pratique de Boostrap, Connection à une base de donnée (MySQL)<br>
 Ajax, API Google, et Utilisation de l'API themoviebd.org pour afficher une liste de films.
